@@ -33,6 +33,6 @@ r10 =Racer.create!( surname:  'Окон', firstname: 'Эстебан', bday: Dat
 
 Team.create!(  team_name: 'Ferrari', racer1: r1, racer2: r9, motor_manufacturer: 'Ferrari 062 1,6 V6T', car_number1: '1-111', car_number2: '1-222', team_country: 'Италия')
 Team.create!(  team_name: 'Red Bull', racer1: r2, racer2: r3, motor_manufacturer: 'TAG Heuer (Renault R.E.17) 1,6 V6T', car_number1: '2-111', car_number2: '2-222', team_country: 'Великобритания')
-Team.create!(  team_name: 'Force India', racer1: r4, racer2: r10, motor_manufacturer: 'Mercedes M08 EQ Power+ 1.6 V6t', car_number1: '3-111', car_number2:'3-222', team_country: 'Великобритания')
-Team.create!(  team_name: 'Williams', racer1: r5, racer2: r6, motor_manufacturer: 'Mercedes M08 EQ Power+ 1,6 V6T', car_number1: '4-111', car_number2: '5-222', team_country: 'Великобритания')
+Team.create!(  team_name: 'Force India', racer1: r4, racer2: r10, motor_manufacturer: 'Mercedes M08 EQ Power+ 1,6 V6T', car_number1: '3-111', car_number2:'3-222', team_country: 'Великобритания')
+Team.create!(  team_name: 'Williams', racer1: r5, racer2: r6, motor_manufacturer: 'Mercedes M08 EQ Power+ 1,6 V6T', car_number1: '4-111', car_number2: '4-222', team_country: 'Великобритания')
 Team.create!(  team_name: 'Mercedes', racer1: r7, racer2: r8, motor_manufacturer: 'Mercedes M08 EQ Power+ 1,6 V6T', car_number1: '5-111', car_number2: '5-222', team_country: 'Великобритания')
