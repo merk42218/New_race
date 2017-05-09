@@ -1,12 +1,15 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :require_login, only: [:index2]
+  skip_before_action :check_app_auth, only: [:index2]
   # GET /teams
   # GET /teams.json
   def index
     @teams = Team.all
   end
-
+  def index2
+    @teams = Team.all
+  end
   # GET /teams/1
   # GET /teams/1.json
   def show

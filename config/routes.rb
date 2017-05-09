@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  resources :teams
+  resources :teams do
+    collection do
+      get :index2
+    end
+  end
   resources :racers do
     collection do
       get :search
+      get :example
+      get :index2
     end
   end
   resources :role_users

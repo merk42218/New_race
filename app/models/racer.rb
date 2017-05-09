@@ -26,10 +26,13 @@ class Racer < ActiveRecord::Base
     # if params['team_name'].present?
     #    (result.where(teams: {racer1_id: params['racer1_id']}))
     # end
-    if (params['racer1_id'].present?)
+    if  (params['racer1_id'].present?) and (params['racer2_id'].present?)
+      result=[]
+    elsif  (params['racer1_id'].present?)
       result= result.where.not(teams: {racer1_id: nil})
     elsif  (params['racer2_id'].present?)
       result= result.where.not(teams2s_racers: {racer2_id: nil})
+
     end
     if params['team_name'].present?
       result= result.where(teams2s_racers: {team_name: params['team_name']}) +

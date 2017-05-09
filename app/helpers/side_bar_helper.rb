@@ -2,12 +2,6 @@ module SideBarHelper
   def side_bar_items(ru)
     result = []
     result << {
-      :name => 'Сслыка без детей',
-      :icon => 'list',
-      :controller => :welcome,
-      :action => :index
-    }
-    result << {
       :name => 'Поиск пилотов',
       :icon => 'search',
       :controller => :racers,
@@ -20,6 +14,19 @@ module SideBarHelper
       :action => :index2
     }
     result << {
+      :name => 'Составы команд',
+      :controller => :teams, :action => :index2,
+      :icon => 'users'
+    }
+    result << {
+      :name => 'Пилоты',
+     :controller => :racers, :action => :index2,
+     :icon => 'drivers-license'
+    }
+
+
+
+    result << {
       :name => 'Администрирование',
       :icon => 'users',
       :children => [
@@ -29,24 +36,28 @@ module SideBarHelper
        :class => 'long'},
       {:name => 'Добавление',
        :controller => :users, :action => :new,
-       :icon => 'user-plus'},
+       :icon => 'user-plus',
+       :class => 'long'},
       {:name => 'Роли',
        :controller => :roles, :action => :index,
        :icon => 'align-center',
        :class => 'long'},
     ]}
     result << {
-      :name => 'Заголовок ссылок',
-      :icon => 'search-plus',
+      :name => 'Редактирование',
+      :icon => 'pencil',
       :children => [
-      {:name => 'Ссылка ребёнок',
-       :controller => :welcome, :action => :index,
-       :icon => 'binoculars'},
-      {:name => 'Ссылка ребёнок',
-       :controller => :welcome, :action => :index,
-       :icon => 'search',
-       :class => 'long'}
+      {:name => 'Календарь чемпионата',
+       :icon => 'calendar',
+       :controller => :calendar_of_the_championships,
+       :action => :index,
+       :class => 'long'},
+      {:name => 'Составы команд',
+       :controller => :teams, :action => :index,
+       :icon => 'users',
+       :class => 'long'},
     ]}
+
     result
   end
 
