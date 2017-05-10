@@ -14,3 +14,8 @@ $(document).ready togglef
 $(document).on togglef
 $(document).on 'page:load', togglef
 $(document).on 'turbolinks:load',ready
+# =======
+# $(document).on 'page:load', ready
+# $(document).ready togglef
+# $(document).on 'page:load', togglef
+# >>>>>>> 4681a207acfef92ab970235c4f96b4c3944db4e7

@@ -8,6 +8,46 @@ class RacersController < ApplicationController
     @racers = Racer.all
   end
   def example
+    @countries=[]
+    (Racer.all).each do |r|
+      if !(@countries.include?(r.country))
+        @countries<<r.country
+      end
+
+    end
+    @motor_manufacturers=[]
+
+    @teams= []
+    @n1=[]
+    @n2=[]
+    @team_countries=[]
+    (Team.all).each do |t|
+      @motor_manufacturers<<t.motor_manufacturer
+      @n1<<t.car_number1
+      @n2<<t.car_number2
+      @team_countries<<t.team_country
+
+    end
+    @motor_manufacturers=@motor_manufacturers.uniq
+    @team_countries= @team_countries.uniq
+
+
+
+    (Racer.all).each do |r|
+      if !(@teams.include?(r.teams1.first.try(:team_name)))
+        @teams<<(r.teams1[0]).try(:team_name)
+      end
+      if !(@teams.include?(r.teams2.first.try(:team_name)))
+        @teams<<(r.teams2[0]).try(:team_name)
+      end
+    @teams.compact!
+    end
+    if params.has_key?('search')
+      @racers=Racer.search(params['search'])
+    else
+      @racers=[]
+    end
+    params['search'] ||= {}
   end
   def index2
     @racers = Racer.all

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get :index2
     end
   end
+
   resources :role_users
   resources :roles
   resources :password_resets
@@ -27,11 +28,13 @@ Rails.application.routes.draw do
       get :activate
     end
   end
+
   resources :calendar_of_the_championships do
     collection do
       get :index2
     end
   end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
