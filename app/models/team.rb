@@ -1,6 +1,6 @@
 class Team < ActiveRecord::Base
-  belongs_to :racer1, class_name: 'Racer', dependent: :destroy, inverse_of: :racer1
-  belongs_to :racer2, class_name: 'Racer', dependent: :destroy, inverse_of: :racer2
+  belongs_to :racer1, class_name: 'Racer', dependent: :destroy
+  belongs_to :racer2, class_name: 'Racer', dependent: :destroy
 
   accepts_nested_attributes_for :racer1, allow_destroy: true
   accepts_nested_attributes_for :racer2, allow_destroy: true

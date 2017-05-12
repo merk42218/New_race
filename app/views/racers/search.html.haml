@@ -83,10 +83,9 @@
               = label_tag 'search[racer2_id]','Является вторым гонщиком'
               =check_box_tag 'search[racer2_id]'
 
-
+- if  @racers.size>0
   %h2 Результаты поиска
-
-  %table.table.table-hover.table-striped.table-responsive
+  %table
     %thead
       %tr
         %th= Racer.human_attribute_name(:surname)
@@ -97,11 +96,44 @@
     %tbody
       - @racers.each do |racer|
         %tr
-          %td= racer.surname
-          %td= racer.firstname
-          %td= racer.bday
-          %td= racer.country
-          %td= racer.number_of_wins
+          %td{:data => {:label => (Racer.human_attribute_name(:surname))}}
+            = racer.surname
+          %td{:data => {:label => (Racer.human_attribute_name(:firstname))}}
+            = racer.firstname
+          %td{:data => {:label => (Racer.human_attribute_name(:bday))}}
+            = racer.bday
+          %td{:data => {:label => (Racer.human_attribute_name(:country))}}
+            = racer.country
+          %td{:data => {:label => (Racer.human_attribute_name(:number_of_wins))}}
+            = racer.number_of_wins
+
+
+
+
+-# .row
+-#   .col-md-2.head
+-#     =Racer.human_attribute_name(:surname)
+-#   .col-md-2.head
+-#     =Racer.human_attribute_name(:firstname)
+-#   .col-md-2.head
+-#     =Racer.human_attribute_name(:bday)
+-#   .col-md-2.head
+-#     =Racer.human_attribute_name(:country)
+-#   .col-md-2.head
+-#     =Racer.human_attribute_name(:number_of_wins)
+-# - @racers.each do |racer|
+-#     .row
+-#       .col-md-2.head
+-#         =racer.surname
+-#       .col-md-2.head
+-#           =racer.firstname
+-#       .col-md-2.head
+-#           =racer.bday
+-#       .col-md-2.head
+-#           =racer.country
+-#       .col-md-2.head
+-#           =racer.number_of_wins
+
 
 -# = form_tag search_racers_path(), method: :get do
 -#   .row

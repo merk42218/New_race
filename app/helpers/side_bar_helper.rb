@@ -43,6 +43,7 @@ module SideBarHelper
        :icon => 'align-center',
        :class => 'long'},
     ]}
+    #if ru.try(:is_admin?)
     result << {
       :name => 'Редактирование',
       :icon => 'pencil',
@@ -57,13 +58,14 @@ module SideBarHelper
        :icon => 'users',
        :class => 'long'},
     ]}
+    #if (ru.try(:is_admin?) or ru.try(:is_operator?))
 
     result
   end
 
   def is_open?(ctr, act)
     case ctr.to_s
-    when 'users', 'roles'
+    when 'users', 'roles', 'racers', 'teams', 'calendar_of_the_championships'
       ctr.to_s == controller_name.to_s
     else
       false

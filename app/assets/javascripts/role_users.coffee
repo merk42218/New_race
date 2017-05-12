@@ -1,4 +1,3 @@
-
 # nested_start
 # Удаление одной роли
 @delete_one_ru = (link)->

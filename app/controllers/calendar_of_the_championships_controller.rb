@@ -2,6 +2,7 @@ class CalendarOfTheChampionshipsController < ApplicationController
   before_action :set_calendar_of_the_championship, only: [:show, :edit, :update, :destroy]
   skip_before_action :require_login, only: [:index2]
   skip_before_action :check_app_auth, only: [:index2]
+  before_action -> {check_role('admin', 'operator')}, except: [:index2]
 
   # GET /calendar_of_the_championships
   # GET /calendar_of_the_championships.json

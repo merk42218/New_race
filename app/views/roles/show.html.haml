@@ -8,7 +8,7 @@
 
 %h1= @role.name
 
-%dl
+%dl{class: "menu-1"}
   %dt= Role.human_attribute_name(:name)
   %dd= @role.name
 
@@ -17,5 +17,3 @@
 
   %dt= Role.human_attribute_name(:full_info)
   %dd= @role.full_info
-
-

@@ -1,1 +1,93 @@
-=image_tag "1.jpg", width: "100%", height: "80%"
+.container#cont
+  .row
+    .col-md-12
+      %div{id: "myCarousel", class: "carousel slide carousel-slideFullOut", :data => {:ride => "carousel"}}
+        %ol{class: "carousel-indicators"}
+          %li{:data => {:target => "#myCarousel"},:data => {:slide => {:to => "0"}}, class: "active"}
+          %li{:data => {:target => "#myCarousel"},:data => {:slide => {:to => "1"}}, class: "active"}
+          %li{:data => {:target => "#myCarousel"},:data => {:slide => {:to => "2"}}, class: "active"}
+        %div{class: "carousel-inner"}
+          %div{class: "item active"}
+            =image_tag "1.jpg", width: "100%", height: "80%"
+            .container
+              %div{class: "carousel-caption"}
+                %h1
+                  %p
+                    %a{class: "btn btn-lg btn-danger", href: "https://www.formula1.com/", role: "button"}
+                      Новости
+
+          %div{class: "item"}
+            =image_tag "news1.jpg", width: "100%", height: "80%", alt: "Фернандо Алонсо готов уйти из McLaren"
+            .container
+              %div{class: "carousel-caption"}
+                %h1
+                  %p{ id: "ppp"}
+                    Фернандо Алонсо готов уйти из McLaren
+                  %p
+                    %a{class: "btn btn-lg btn-danger", href: "https://www.f1news.ru/news/f1-120683.html", role: "button"}
+                      Подробнее
+          %div{class: "item"}
+            =image_tag "new2.jpg", width: "100%", height: "80%", alt: "Феттель: Я готов выступать с любым напарником"
+            .container{id: "cont2"}
+              %div{class: "carousel-caption"}
+                %h1
+                  %p{ id: "ppp"}
+                    Феттель: Я готов выступать с любым напарником
+                  %p
+                    %a{class: "btn btn-lg btn-danger", href: "https://www.f1news.ru/news/f1-120694.html", role: "button"}
+                      Подробнее
+          %a{class:"left carousel-control", href:"#myCarousel", :data => {:slide  => "prev"}}
+            %span{class: "glyphicon glyphicon-chevron-left"}
+          %a{class:"right carousel-control", href:"#myCarousel", :data => {:slide  => "next"}}
+            %span{class: "glyphicon glyphicon-chevron-right"}
+
+
+-#  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+-#  <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+-# <div class="col-md-12">
+-#
+-# <div id="myCarousel" class="carousel slide carousel-slideFullOut" data-ride="carousel">
+-#  <ol class="carousel-indicators">
+-#  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+-#  <li data-target="#myCarousel" data-slide-to="1"></li>
+-#  <li data-target="#myCarousel" data-slide-to="2"></li>
+-#  </ol>
+-#  <div class="carousel-inner">
+-#  <div class="item active">
+-#  <img src="http://atmpl.ru/assets/img/home-bg.jpg" alt="Адаптивные элементы для сайта">
+-#  <div class="container">
+-#  <div class="carousel-caption">
+-# <h1><span class="glyphicon glyphicon-star-empty"></span> aTmpl <span class="glyphicon glyphicon-star-empty"></span></h1>
+-# <p style="color:#fff;">Адаптивные элементы для сайта</p>
+-#  <p><a class="btn btn-lg btn-opacity" href="/" role="button">Смотреть</a></p>
+-#  </div>
+-#  </div>
+-#  </div>
+-#  <div class="item">
+-#  <img src="http://atmpl.ru/assets/img/design-bg.jpg" alt="Адаптивный дизайн для сайта">
+-#  <div class="container">
+-#  <div class="carousel-caption">
+-# <h1><span class="glyphicon glyphicon-star-empty"></span> aTmpl <span class="glyphicon glyphicon-star-empty"></span></h1>
+-# <p style="color:#fff;">Адаптивный дизайн для сайта</p>
+-#  <p><a class="btn btn-lg btn-opacity" href="/publ" role="button">Смотреть</a></p>
+-#  </div>
+-#  </div>
+-#  </div>
+-#  <div class="item">
+-# <img src="http://atmpl.ru/assets/img/templates-bg1.jpg" alt="Адаптивные шаблоны для сайта">
+-#  <div class="container">
+-#  <div class="carousel-caption">
+-# <h1><span class="glyphicon glyphicon-star-empty"></span> aTmpl <span class="glyphicon glyphicon-star-empty"></span></h1>
+-# <p style="color:#fff;">Адаптивные шаблоны для сайта</p>
+-#  <p><a class="btn btn-lg btn-opacity" href="/load" role="button">Смотреть</a></p>
+-#  </div>
+-#  </div>
+-#  </div>
+-#  </div>
+-#  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+-#  <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+-#  </div>
+-#
+-# </div>
+-#
+-# </div></div>

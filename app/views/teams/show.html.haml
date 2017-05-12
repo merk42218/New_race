@@ -1,3 +1,10 @@
+=breadcrumb_tag do
+  %li.active
+    = @team.team_name
+  %li
+    = link_to t('headers.teams.index'), teams_path
+  %li
+    Редактирование
 %h1= @team.team_name
 
 %dl

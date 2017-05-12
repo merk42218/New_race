@@ -2,6 +2,7 @@ class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
   skip_before_action :require_login, only: [:index2]
   skip_before_action :check_app_auth, only: [:index2]
+  before_action -> {check_role('admin', 'operator')}, except: [:index2]
   # GET /teams
   # GET /teams.json
   def index

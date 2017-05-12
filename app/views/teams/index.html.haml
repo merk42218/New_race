@@ -1,6 +1,10 @@
+=breadcrumb_tag do
+  %li.active
+    = t('headers.teams.index')
+  %li
+    Редактирование
 %h1= t('headers.teams.index')
-
-%table.table.table-hover.table-striped
+%table.table-striped.table-hover
   %caption
     = link_to new_team_path, class: 'btn btn-success' do
       = fa_icon :plus
@@ -15,19 +19,23 @@
       %th= Team.human_attribute_name(:car_number2)
       %th= Team.human_attribute_name(:team_country)
       %th
-      %th
-      %th
-
   %tbody
     - @teams.each do |team|
       %tr
-        %td= team.team_name
-        %td= team.motor_manufacturer
-        %td= Racer.find(team.racer1_id).surname + " " +  Racer.find(team.racer1_id).firstname
-        %td= Racer.find(team.racer2_id).surname + " " +  Racer.find(team.racer2_id).firstname
-        %td= team.car_number1
-        %td= team.car_number2
-        %td= team.team_country
+        %td{:data => {:label => Team.human_attribute_name(:team_name)}}
+          = team.team_name
+        %td{:data => {:label => Team.human_attribute_name(:motor_manufacturer)}}
+          = team.motor_manufacturer
+        %td{:data => {:label =>  Team.human_attribute_name(:racer1_id)}}
+          = Racer.find(team.racer1_id).surname + " " +  Racer.find(team.racer1_id).firstname
+        %td{:data => {:label =>  Team.human_attribute_name(:racer2_id)}}
+          = Racer.find(team.racer2_id).surname + " " +  Racer.find(team.racer2_id).firstname
+        %td{:data => {:label => Team.human_attribute_name(:car_number1)}}
+          = team.car_number1
+        %td{:data => {:label => Team.human_attribute_name(:car_number2)}}
+          = team.car_number2
+        %td{:data => {:label => Team.human_attribute_name(:team_country)}}
+          = team.team_country
         %td.right
           = link_to team, class: 'btn btn-warning' do
             = fa_icon :eye

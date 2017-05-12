@@ -11,15 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20170507102620) do
-
-# ActiveRecord::Schema.define(version: 20170501085108) do
-# >>>>>>> 4681a207acfef92ab970235c4f96b4c3944db4e7
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "calendar_of_the_championships", force: :cascade do |t|
     t.string   "gp_name",    null: false
@@ -81,7 +76,6 @@ ActiveRecord::Schema.define(version: 20170507102620) do
   add_index "roles", ["info"], name: "index_roles_on_info", unique: true, using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", unique: true, using: :btree
 
-
   create_table "teams", force: :cascade do |t|
     t.string   "team_name",          null: false
     t.integer  "racer1_id"
@@ -138,8 +132,6 @@ ActiveRecord::Schema.define(version: 20170507102620) do
 
   add_foreign_key "role_users", "roles"
   add_foreign_key "role_users", "users"
-
   add_foreign_key "teams", "racers", column: "racer1_id", name: "teams_racer1_id_fkey"
   add_foreign_key "teams", "racers", column: "racer2_id", name: "teams_racer2_id_fkey"
-
 end

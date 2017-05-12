@@ -23,6 +23,7 @@
     = f.text_field :team_country
   %hr
   = f.fields_for :racer1 do |ff|
+    %h3 Первый гонщик
     .field
       = ff.label :surname
       = ff.text_field :surname
@@ -45,7 +46,10 @@
     .field
       = ff.hidden_field :id
   %hr
+
   = f.fields_for :racer2 do |ff|
+    %h3 Второй гонщик
+
     .field
       = ff.label :surname
       = ff.text_field :surname

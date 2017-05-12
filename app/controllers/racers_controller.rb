@@ -2,6 +2,7 @@ class RacersController < ApplicationController
   before_action :set_racer, only: [:show, :edit, :update, :destroy]
   skip_before_action :require_login, only: [:index2, :search]
   skip_before_action :check_app_auth, only: [:index2, :search ]
+  before_action -> {check_role('admin', 'operator')}, except: [:index2, :search]
   # GET /racers
   # GET /racers.json
   def index

@@ -1,4 +1,11 @@
-%h1=t('headers.calendar_of_the_championships.index')
+=breadcrumb_tag do
+  %li.active
+    = t('headers.calendar_of_the_championships.edit') + " " + @calendar_of_the_championship.gp_name
+  %li
+    = link_to t('headers.calendar_of_the_championships.index'), calendar_of_the_championships_path
+  %li
+    Администрирование
+%h1= @calendar_of_the_championship.gp_name
 
 = render 'form'
 

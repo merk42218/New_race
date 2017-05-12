@@ -1,3 +1,32 @@
+%table
+  %thead
+    %tr
+      %th Payment
+      %th Issue data
+      %th Amount
+      %th Period
+  %tbody
+    %tr
+      %td{:data => {:label => "Payment"}}
+        Payment #1
+      %td{:data => {:label => "Issue data"}}
+        02/01/2015
+      %td{:data => {:label => "Amount"}}
+        $2,311
+      %td{:data => {:label => "Period"}}
+        01/01/2015 - 01/31/2015
+    %tr
+      %td{:data => {:label => "Payment"}}
+        Payment #2
+      %td{:data => {:label => "Issue data"}}
+        03/01/2015
+      %td{:data => {:label => "Amount"}}
+        $3,211
+      %td{:data => {:label => "Period"}}
+        02/01/2015 - 02/28/2015
+
+
+
 = form_tag search_racers_path(), method: :get do
   .well
     .row
@@ -21,7 +50,7 @@
               =label_tag 'search[bday]','Дата рождения'
               %dd
                 %div
-                  .input-group.date.datepicker
+                  .input-group.data.datapicker
                     =text_field_tag 'search[bday]', params['search']['bday'], class: 'form-control'
                     %span.input-group-addon
                       %span.glyphicon.glyphicon-calendar
@@ -84,7 +113,70 @@
               =check_box_tag 'search[racer2_id]'
 
 
-  %h2 Результаты поиска
+-# %h2 Результаты поиска
+-# %table.responstable
+-#   %tr
+-#     %th №
+-#     %th{:data => {:th => "Driver details"}}}
+-#       %span
+-#         First name
+-#     %th
+-#       Surname
+-#     %th
+-#       Surname data of birth
+-#     %th
+-#       Relationship
+-#   %tr
+-#     %td
+-#       1
+-#     %td  Steve
+-#     %td Foo
+-#     %td 01/01/1978
+-#     %td Policyholder
+-#   %tr
+-#     %td 2
+-#     %td Steffie
+-#     %td Foo
+-#     %td 01/01/1978
+-#     %td Spouse
+
+-# %table{class: "rwd-table"}}
+-#   %tr
+-#     %th
+-#       Movie Title
+-#     %th
+-#       Genre
+-#     %th
+-#       Year
+-#     %th
+-#       Gross
+-#   %tr
+-#     %td {:data => {th: "Movie Title"}}}
+-#       Star Wars
+-#     %td {:data => {th: "Genre"}}}
+-#       Adventure, Sci-fi
+-#     %td {:data => {th: "Year"}}}
+-#       1977
+-#     %td {:data => {th: "Gross"}}}
+-#       $460,935,665
+-#   %tr
+-#     %td {:data => {:th => "Movie Title"}}}
+-#       Howard The Duck
+-#     %td {:data => {:th => "Genre"}}}
+-#       Comedy
+-#     %td {:data => {:th => "Year"}}}
+-#       1986
+-#     %td {:data => {:th => "Gross"}}}
+-#       $16,295,774
+-#   %tr
+-#     %td {:data => {:th => "Movie Title"}}}
+-#       American Graffiti
+-#     %td {:data => {:th => "Genre"}}}
+-#       Comedy, Drama
+-#     %td {:data => {:th => "Year"}}}
+-#       1973
+-#     %td {:data => {:th => "Gross"}}}
+-#       $115,000,000
 
   %table.table.table-hover.table-striped.table-responsive
     %thead
@@ -97,8 +189,8 @@
     %tbody
       - @racers.each do |racer|
         %tr
-          %td= racer.surname
-          %td= racer.firstname
-          %td= racer.bday
-          %td= racer.country
-          %td= racer.number_of_wins
+          %td = racer.surname
+          %td = racer.firstname
+          %td = racer.bday
+          %td = racer.country
+          %td = racer.number_of_wins

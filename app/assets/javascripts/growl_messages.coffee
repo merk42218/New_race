@@ -10,7 +10,3 @@ ready = ->
         type: type
 $(document).ready ready
 $(document).on 'page:load', ready
-$(document).on 'turbolinks:load', ready
-# =======
-# $(document).on 'page:load', ready
-# >>>>>>> 4681a207acfef92ab970235c4f96b4c3944db4e7

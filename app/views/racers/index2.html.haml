@@ -1,7 +1,5 @@
 %h1= t('headers.racers.index')
-
-%table.table.table-hover.table-striped
-
+%table.table-striped.table-hover
   %thead
     %tr
       %th= Racer.human_attribute_name(:surname)
@@ -13,8 +11,13 @@
   %tbody
     - @racers.each do |racer|
       %tr
-        %td= racer.surname
-        %td= racer.firstname
-        %td= racer.bday
-        %td= racer.country
-        %td= racer.number_of_wins
+        %td{:data => {:label => (Racer.human_attribute_name(:surname))}}
+          = racer.surname
+        %td{:data => {:label => (Racer.human_attribute_name(:firstname))}}
+          = racer.firstname
+        %td{:data => {:label => (Racer.human_attribute_name(:bday))}}
+          = racer.bday
+        %td{:data => {:label => (Racer.human_attribute_name(:country))}}
+          = racer.country
+        %td{:data => {:label => (Racer.human_attribute_name(:number_of_wins))}}
+          = racer.number_of_wins
