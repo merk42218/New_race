@@ -42,8 +42,7 @@ module SideBarHelper
        :controller => :roles, :action => :index,
        :icon => 'align-center',
        :class => 'long'},
-    ]}
-    #if ru.try(:is_admin?)
+    ]} if ru.try(:is_admin?)
     result << {
       :name => 'Редактирование',
       :icon => 'pencil',
@@ -57,8 +56,7 @@ module SideBarHelper
        :controller => :teams, :action => :index,
        :icon => 'users',
        :class => 'long'},
-    ]}
-    #if (ru.try(:is_admin?) or ru.try(:is_operator?))
+    ]} if (ru.try(:is_admin?) or ru.try(:is_operator?))
 
     result
   end
