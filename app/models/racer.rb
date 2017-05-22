@@ -43,10 +43,8 @@ class Racer < ActiveRecord::Base
        (result.where(teams: {motor_manufacturer: params['motor_manufacturer']}))
     end
     if params['car_number1'].present?
-      result= (result.where(teams: {car_number1: params['car_number1']}))
-    end
-    if params['car_number2'].present?
-      result= (result.where(teams: {car_number2: params['car_number2']}))
+      result= (result.where(teams: {car_number1: params['car_number1']})) +
+       (result.where(teams2s_racers: {car_number2: params['car_number1']}))
     end
     if params['team_country'].present?
       result= result.where(teams2s_racers: {team_country: params['team_country']}) +

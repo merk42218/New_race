@@ -24,7 +24,9 @@ class RacersController < ApplicationController
     @team_countries=[]
     (Team.all).each do |t|
       @motor_manufacturers<<t.motor_manufacturer
+
       @n1<<t.car_number1
+      @n1<<t.car_number2
       @n2<<t.car_number2
       @team_countries<<t.team_country
 
@@ -71,6 +73,7 @@ class RacersController < ApplicationController
     (Team.all).each do |t|
       @motor_manufacturers<<t.motor_manufacturer
       @n1<<t.car_number1
+      @n1<<t.car_number2
       @n2<<t.car_number2
       @team_countries<<t.team_country
 
