@@ -61,34 +61,21 @@
             .form-group
               = label_tag 'search[car_number1]','Номер машины гонщика'
               =select_tag 'search[car_number1]',  options_for_select(@n1),{ include_blank: true, class: 'form-control'}
-
-        -# .row
-          -# .col-md-12.simple
-          -#   .form-group
-          -#     = label_tag 'search[car_number2]','Номер машины второго гонщика'
-          -#     =select_tag 'search[car_number2]', options_for_select(@n2),{ include_blank: true, class: 'form-control'}
         .row
           .col-md-12.simple
             .form-group
               = label_tag 'search[team_country]','Страна команды'
               =select_tag 'search[team_country]', options_for_select(@team_countries),{ include_blank: true, class: 'form-control'}
         .row
-          = fa_icon('info-circle', class: 'menu-icon ', class: 'my_hidden my_pointer')        
-        .row
-          -# .col-md-12.simple
-          -#   .form-group
-          -#     = label_tag 'search[racer1_id]','Каким гонщиеом является?'
-          -#     =select_tag 'search[racer1_id]', options_for_select(["Первый гонщик команды","Второй гонщик команды"]),{ include_blank: true, class: 'form-control'}
-          .col-md-12
+          .col-md-12.simple
             .form-group
               = label_tag 'search[racer1_id]','Является первым гонщиком'
               =check_box_tag 'search[racer1_id]'
-          .col-md-12
+        .row
+          .col-md-12.simple
             .form-group
               = label_tag 'search[racer2_id]','Является вторым гонщиком'
               =check_box_tag 'search[racer2_id]'
-
-
 
 - if  @racers.size>0
   %h2 Результаты поиска

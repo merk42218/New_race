@@ -15,27 +15,6 @@
  *= require_self
  */
 
-.my_pointer{
-   cursor: help;
-}
-.podskazka{
-   display: inline;
-   position: relative;
-}
-
-
-.my_hidden::after {
-  /*display: inline-block;*/
-  /*background: #D9534F;*/
-  color: #d6d6d8;
-  content:  ' Если номер гонщика в команде значения не имеет, стоит оставить данные поля незаполненными';
-}
-.my_hidden:hover{
-    color: #fff;
-    background: #D9534F;
-}
-
-
 
 
   .col-md-12.my_head {
